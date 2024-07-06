@@ -1,0 +1,28 @@
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* transition: transform 0.2s; */
+  height:150px;
+  align-items: center;
+  align-content: center;
+  
+}
+
+
+.card:hover {
+  background-color: lightblue;
+  color: red;
+  /* transform: translateY(-10px); */
+}
+
+.card h2 {
+  margin: 0 0 8px;
+}
+
+.card p {
+  margin: 0;
+}
