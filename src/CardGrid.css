@@ -2,7 +2,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 16px;
-  padding: 16px;
+  padding: 8px;
   background-color:white;
   border-radius: 8px;
 }
+
+/* .card-grid-background-view {
+  padding: 16px;
+  background-color:white;
+} */

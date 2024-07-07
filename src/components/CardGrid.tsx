@@ -1,34 +1,30 @@
-import React from 'react';
-import Card from '../components/Card';
-import '../CardGrid.css';
-
-const cards = [
-  { title: 'Card 1', description: 'This is the first card.' },
-  { title: 'Card 2', description: 'This is the second card.' },
-  { title: 'Card 3', description: 'This is the third card.' },
-  { title: 'Card 4', description: 'This is the fourth card.' },
-  { title: 'Card 1', description: 'This is the first card.' },
-  { title: 'Card 2', description: 'This is the second card.' },
-  { title: 'Card 3', description: 'This is the third card.' },
-  { title: 'Card 4', description: 'This is the fourth card.' },
-  { title: 'Card 1', description: 'This is the first card.' },
-  { title: 'Card 2', description: 'This is the second card.' },
-  { title: 'Card 3', description: 'This is the third card.' },
-  { title: 'Card 4', description: 'This is the fourth card.' },
+import Card from "../components/Card";
+import "../CardGrid.css";
+import { CalculatorConstants } from "../utility/Constants";
+import { useNavigate } from 'react-router-dom';
 
 
-];
+const CardGrid = () => {
+  const navigate = useNavigate();
 
-const CardGrid: React.FC = () => {
+  const handleCardClick = (index: number) => {
+    navigate(`/details/${index}`);
+  };
+
   return (
-    // <div className="background">
-    <div className="card-grid">
-      {cards.map((card, index) => (
-        <Card key={index} title={card.title} description={card.description} />
-      ))}
+    <div>
+      <div className="card-grid">
+        {CalculatorConstants.calculator_list.map((card, index) => (
+          <Card
+            key={index}
+            image={card.image ?? ""}
+            title={card.title}
+            description={card.description}
+            onClick={() => handleCardClick(index)}
+          />
+        ))}
+      </div>
     </div>
-    // </div>
   );
 };
-
 export default CardGrid;

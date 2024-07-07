@@ -1,24 +1,14 @@
-import { FC } from "react";
 import "../Card.css";
+import { CardProps } from '../interfaces/CardProps';
 
-interface CardProps {
-  title: string;
-  description: string;
-}
-
-// const Card: FC<CardProps> = ({ title, description }) => {
-//   return (
-//     <div className="card">
-//       <h2>{title}</h2>
-//       <p>{description}</p>
-//     </div>
-//   );
-// };
-
-const Card = ({ title, description }: CardProps) => {
+const Card = ({ title, description, image,onClick}: CardProps) => {
   return (
-    <div className="card">
-      <h2>{title}</h2>
+    <div className="card" onClick={onClick}>
+      <div className="content-wrapper">
+        <img src={image} alt={""} className="image" />
+        <div className="title">{title}</div>
+        <div className="description">{description}</div>
+      </div>
     </div>
   );
 };
