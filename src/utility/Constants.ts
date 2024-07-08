@@ -28,3 +28,17 @@ export const FaqConstants =  {
     { title: 'PPF Calculator', description: 'This is the third card.',image:sipcalculator },
    ] 
 }
+
+export const AskQueryConstants =  {
+  main_title: "Ask a Query",
+  case_type_list:[
+    { title: 'SIP Calculator'},
+    { title: 'LUMPSUM Calculator'},
+    { title: 'RD Calculator'},
+   ],
+   sub_case_type_list:[
+    { title: 'Bank'},
+    { title: 'Stocks'},
+    { title: 'Mutual funds'},
+   ] 
+}

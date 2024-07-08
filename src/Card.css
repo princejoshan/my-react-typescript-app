@@ -25,12 +25,6 @@
   color: gray;
 }
 
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 .image {
   max-width: 100px;
   margin-right: 16px;

@@ -3,7 +3,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { CalculatorConstants } from '../utility/Constants';
 
-const CalCulatorDetail: React.FC = () => {
+const CalCulatorDetail = () => {
   const { id } = useParams<{ id: string }>();
   const card = CalculatorConstants.calculator_list[parseInt(id ?? '0')];
 

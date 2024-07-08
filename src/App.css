@@ -1,3 +1,7 @@
+:root {
+  --custom-gap: 50px;
+}
+
 .App {
   text-align: center;
 }
@@ -41,3 +45,18 @@
   padding: 16px;
   background-color:white;
 }
+
+  .content-wrapper-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .content-wrapper-row {
+    padding-top: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--custom-gap);
+  }
+

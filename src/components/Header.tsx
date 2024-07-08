@@ -3,6 +3,12 @@ import "../Header.css";
 import { HeaderProps } from "../interfaces/HeaderProps";
 
 const Header = ({ title, description }: HeaderProps) => {
+  
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // Implement your search logic here
+    console.log(event.target.value);
+  };
+
   return (
     <div className="header">
       <div className="left">
@@ -10,7 +16,7 @@ const Header = ({ title, description }: HeaderProps) => {
         <div className="description">{description}</div>
       </div>
       <div className="right">
-        <SearchBar />
+        <SearchBar onChange={handleSearchChange} value="" />
       </div>
     </div>
   );

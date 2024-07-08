@@ -7,7 +7,7 @@ const Faq = () => {
     <div>
       <div className="header">
         <div className="left">
-          <div className="title">{"Freqently ask Questions"}</div>
+          <div className="title">{FaqConstants.main_title}</div>
         </div>
       </div>
       <Accordion items={FaqConstants.faq_list}></Accordion>

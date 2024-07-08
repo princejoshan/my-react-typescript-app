@@ -1,37 +1,23 @@
 // src/components/Accordion.tsx
 import React, { useState } from 'react';
 import '../styles/Accordian.css';
+import { AccordionItemProps, AccordionProps } from '../interfaces/AccordianProps';
 
-interface AccordionItemProps {
-  title: string;
-  des: string;
-  isOpen: boolean;
-  onClick: () => void;
-}
-
-const AccordionItem: React.FC<AccordionItemProps> = ({ title, des, isOpen, onClick }) => {
+const AccordionItem = ({ title, description, isOpen, onClick } : AccordionItemProps) => {
   return (
     <div className='accordion'>
       <div className="accordion-header" onClick={onClick}>
       <div className="accordion-title">{title}</div>
         <div className="accordion-icon">{isOpen ? '▲' : '▼'}</div>
               </div>
-      {isOpen && <div className="accordion-content">{des}</div>}
+      {isOpen && <div className="accordion-content">{description}</div>}
     </div>
   );
 };
 
-// interface AccordionProps {
-//   items: { title: string; content: React.ReactNode }[];
-// }
 
-interface AccordionProps {
-    items: { title: string; description: string,image:string }[];
-  }
-  
-
-const Accordion: React.FC<AccordionProps> = ({ items }) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+const Accordion = ({ items } : AccordionProps) => {
+  const [openIndex, setOpenIndex] = useState<number | null>(1);
 
   const handleClick = (index: number) => {
     setOpenIndex(index === openIndex ? null : index);
@@ -44,7 +30,7 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
           key={index}
           title={item.title}
           isOpen={index === openIndex}
-          des={item.description}
+          description={item.description}
           onClick={() => handleClick(index)}
         />
       ))}
