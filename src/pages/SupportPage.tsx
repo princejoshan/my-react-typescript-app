@@ -5,7 +5,8 @@ import Faq from "./FaqPage";
 import SearchBar from "../components/SearchBar";
 import { useDispatch, useSelector } from "react-redux";
 import { filterQueryEntry, setSearchQuery } from "../redux/query/actions";
-import { RootState } from "../redux/store";
+import { AppState } from "../redux/store";
+import Button from "../components/Button";
 
 interface Segment {
   title: string;
@@ -19,7 +20,7 @@ interface SegmentedContentProps {
 const SegmentedContent = ({ segments }: SegmentedContentProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const dispatch = useDispatch();
-  const searchQry = useSelector((state: RootState) => state.searchQuery);
+  const searchQry = useSelector((state: AppState) => state.query.searchQuery);
 
   useEffect(() => {
     setSearchQuery(searchQry);
@@ -53,7 +54,9 @@ const SegmentedContent = ({ segments }: SegmentedContentProps) => {
             onChange={handleSearchChange}
             value={searchQry}
           ></SearchBar>
+          <Button text="Clear"></Button>
         </div>
+       
       </div>
       {activeIndex === 0 && <MyQueries />}
       {activeIndex === 1 && <Faq />}

@@ -5,6 +5,8 @@ import { CalculatorConstants } from '../utility/Constants';
 
 const Faq = () => {
 
+  
+
   return (
     <div>
       <h1>{"FAQ Section"}</h1>

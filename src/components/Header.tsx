@@ -1,12 +1,22 @@
 import SearchBar from "./SearchBar";
 import "../Header.css";
 import { HeaderProps } from "../interfaces/HeaderProps";
+import { useDispatch, useSelector } from "react-redux";
+import { AppState } from "../redux/store";
+import { search } from "../redux/homepage/actions";
+import { useEffect } from "react";
 
 const Header = ({ title, description }: HeaderProps) => {
+  const dispatch = useDispatch();
+  const searchQry = useSelector((state: AppState) => state.homepage.searchQuery);
   
+  
+  useEffect(() => {
+    console.log("Header rendered")
+  });
+
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // Implement your search logic here
-    console.log(event.target.value);
+    dispatch(search(event.target.value));
   };
 
   return (
@@ -16,7 +26,7 @@ const Header = ({ title, description }: HeaderProps) => {
         <div className="description">{description}</div>
       </div>
       <div className="right">
-        <SearchBar onChange={handleSearchChange} value="" />
+        <SearchBar onChange={handleSearchChange} value= {searchQry ?? ""} />
       </div>
     </div>
   );

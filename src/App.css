@@ -60,3 +60,53 @@
     gap: var(--custom-gap);
   }
 
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-left: 8px;
+    /* margin-top: 5px;  */
+  }
+
+
+  .info-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start ;
+    padding-left: 16px;
+    /* padding: 16px; */
+  }
+  
+  .info-title {
+    font-size: 12px;
+    font-weight:500;
+  }
+  
+  .info-value {
+    margin-left: 8px;
+    font-size: 10px;
+    font-weight: normal;
+    color: gray;
+  }
+
+  .download-view {
+    background-color:lightpink;
+    padding: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+  }
+
+  .app-image {
+   height: 50;
+   width: 50;
+  }
+
+  .dwonlaod-title {
+    font-size: 20px;
+    font-weight:400;
+  }

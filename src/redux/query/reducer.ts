@@ -3,9 +3,9 @@ import { QueryEntry, QueryState } from './types';
 import * as actions from './actions';
 
 const initialState: QueryState = {
-  entries: [],
-  filteredEntries: [],
-  searchQuery:"" // Initial empty filtered entries
+  entries: JSON.parse(localStorage.getItem("queries") || "[]"),
+  filteredEntries: JSON.parse(localStorage.getItem("queries") || "[]"),
+  searchQuery:""
 };
 
 const querySlice = createSlice({
@@ -17,6 +17,7 @@ const querySlice = createSlice({
       .addCase(actions.addQueryEntry, (state, action: PayloadAction<QueryEntry>) => {
         state.entries.push(action.payload);
         state.filteredEntries.push(action.payload);
+        localStorage.setItem("queries", JSON.stringify(state.filteredEntries));
       })
       .addCase(actions.filterQueryEntry, (state, action: PayloadAction<string>) => {
         state.filteredEntries = state.entries.filter((e)=>e.caseType.toLowerCase().includes(action.payload.toLowerCase()))

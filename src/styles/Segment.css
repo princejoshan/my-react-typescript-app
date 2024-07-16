@@ -33,7 +33,7 @@
   }
   
   .segment-tabs button.active {
-    color: #007bff; /* Color of the active tab text */
+    color:rgb(195, 31, 97); /* Color of the active tab text */
   }
   
   .segment-tabs button.active::before {
@@ -43,5 +43,20 @@
     bottom: -2px; /* Adjust based on the desired underline position */
     width: 100%;
     height: 2px;
-    background-color: #007bff; /* Color of the underline */
+    background-color:rgb(195, 31, 97); /* Color of the underline */
   }
+
+  @media (max-width: 768px) {
+  
+    .segment-tabs {
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+    .button {
+      flex-direction: column;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  
+  }
+  

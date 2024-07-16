@@ -1,6 +1,5 @@
 export interface QueryEntry {
     queryType?: string;
-
     id: number;
     caseType: string;
     query: string;

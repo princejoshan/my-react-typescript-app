@@ -3,11 +3,11 @@ import "../styles/MyQueries.css";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../redux/store";
+import { AppState } from "../redux/store";
 
 const MyQueries = () => {
   const navigate = useNavigate();
-  const entries = useSelector((state: RootState) => state.filteredEntries);
+  const entries = useSelector((state: AppState) => state.query.filteredEntries);
   
 
   const handleAskQueryClick = () => {

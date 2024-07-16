@@ -1,7 +1,8 @@
 // src/components/Accordion.tsx
 import React, { useState } from 'react';
 import '../styles/Accordian.css';
-import { AccordionItemProps, AccordionProps } from '../interfaces/AccordianProps';
+import { AccordionItemProps } from '../interfaces/AccordianProps';
+import { HomePageFilteredData } from '../redux/homepage/types';
 
 const AccordionItem = ({ title, description, isOpen, onClick } : AccordionItemProps) => {
   return (
@@ -16,7 +17,7 @@ const AccordionItem = ({ title, description, isOpen, onClick } : AccordionItemPr
 };
 
 
-const Accordion = ({ items } : AccordionProps) => {
+const Accordion = ({ faqfilteredList } : HomePageFilteredData) => {
   const [openIndex, setOpenIndex] = useState<number | null>(1);
 
   const handleClick = (index: number) => {
@@ -25,7 +26,7 @@ const Accordion = ({ items } : AccordionProps) => {
 
   return (
     <div >
-      {items.map((item, index) => (
+      {faqfilteredList!.map((item, index) => (
         <AccordionItem
           key={index}
           title={item.title}
